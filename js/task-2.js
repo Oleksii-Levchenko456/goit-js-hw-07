@@ -28,16 +28,14 @@ const images = [
 
 function newGallery() {
 
-const ul = document.querySelector(".gallery")
+  const list = document.querySelector(".gallery")
+  const merkap = images
+    .map(({ url, alt }) => `<li class="li-class-homework2"> <img src="${url}" alt="${alt}"></li>`)
+    .join('')
 
-  images.forEach(image => {
-    const li = document.createElement("li")
-    li.classList.add("li-class-homework2")
+ 
 
-    
-    li.innerHTML = `<img src="${image.url}" alt="${image.alt}" >`
-    ul.append(li)
-  })
+    list.insertAdjacentHTML("beforeend", merkap)
 }
 
 newGallery()
